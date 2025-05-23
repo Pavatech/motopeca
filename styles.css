@@ -240,3 +240,16 @@ footer {
         margin-bottom: 1rem;
     }
 }
+.search-bar {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.search-bar input {
+    width: 80%;
+    max-width: 500px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
