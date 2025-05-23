@@ -124,37 +124,74 @@ h2 {
     background: #128C7E;
 }
 
-.map-container {
-    text-align: center;
-    margin: 1rem 0;
-}
-
-.contact-content {
+/* Estilo para a seção Sobre Nós */
+.about-container {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 2rem;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+    flex: 1;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo para a seção Contato */
+.contact-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .contact-text {
     flex: 1;
+    font-size: 1.1rem;
+    color: #333;
 }
 
 .contact-image {
     flex: 1;
+    text-align: center;
 }
 
 .contact-image img {
     max-width: 100%;
     border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .contact-container h3 {
-    margin-top: 1rem;
+    margin-bottom: 1rem;
     color: #333;
 }
 
-.contact-container p, 
+.contact-container p,
 .contact-container ul {
     margin-bottom: 1rem;
 }
@@ -185,17 +222,21 @@ footer {
     }
 
     .product {
-        width: 90%; /* Ajusta a largura em telas menores */
+        width: 90%;
     }
 
-    .contact-content {
+    .about-container,
+    .contact-container {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
 
-    .contact-text, .contact-image {
-        flex: none; /* Remove o flex-grow */
-        margin-bottom: 1rem; /* Adiciona espaçamento entre eles */
+    .about-text,
+    .contact-text,
+    .about-image,
+    .contact-image {
+        flex: none;
+        margin-bottom: 1rem;
     }
 }
