@@ -1,266 +1,129 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Motopeças</title>
-    <style>
-        /* Reset e estilos básicos */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background: #faf602;
-            color: #000;
-            padding: 1rem 0;
-            text-align: center;
-        }
-        .logo-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .logo {
-            width: 120px;
-            height: auto;
-            margin-bottom: 0.5rem;
-        }
-        h1 {
-            margin: 0;
-        }
-        nav ul {
-            list-style: none;
-            margin-top: 1rem;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 1rem;
-        }
-        nav ul li a {
-            color: #000;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-        main {
-            padding: 2rem;
-        }
-        section {
-            margin-bottom: 2rem;
-        }
-        h2 {
-            text-align: center;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-        /* Produtos */
-        .products-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-        }
-        .product {
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-            text-align: center;
-            width: 250px;
-            padding: 1rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .product:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-        .product img {
-            width: 100%;
-            height: auto;
-            border-bottom: 1px solid #ddd;
-        }
-        .product h3 {
-            margin: 1rem 0 0.5rem;
-            color: #333;
-        }
-        .product p {
-            color: #666;
-            margin-bottom: 1rem;
-        }
-        .btn-add-cart {
-            background: #25D366;
-            color: #fff;
-            padding: 0.5rem 1rem;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .btn-add-cart:hover {
-            background: #128C7E;
-        }
-        /* Carrinho */
-        #cart {
-            background: #fff;
-            border: 2px solid #25D366;
-            border-radius: 8px;
-            padding: 1rem;
-            max-width: 400px;
-            margin: 2rem auto;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        #cart h2 {
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-        #cart-items {
-            list-style: none;
-            padding-left: 0;
-            max-height: 200px;
-            overflow-y: auto;
-            margin-bottom: 1rem;
-        }
-        #cart-items li {
-            margin-bottom: 0.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        #cart-items li button {
-            background: transparent;
-            border: none;
-            color: #d00;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        #send-order {
-            background: #128C7E;
-            color: white;
-            padding: 0.75rem;
-            width: 100%;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        #send-order:hover {
-            background: #0f6e61;
-        }
-        /* Responsivo */
-        @media (max-width: 768px) {
-            nav ul li {
-                display: block;
-                margin: 0.5rem 0;
-            }
-            .products-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            .product {
-                width: 90%;
-            }
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Motopeças</title>
+
+
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <img src="logo.PNG" alt="Motopeças" class="logo" />
-            <h1>Motopeças</h1>
+<header>
+    <div class="logo-container">
+        <img src="logo.PNG" alt="Motopeças" class="logo" />
+        <h1>Motopeças</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#products">Produtos</a></li>
+            <li><a href="#location">Localização</a></li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="products">
+        <h2>Nossos Produtos</h2>
+
+        <!-- Barra de pesquisa -->
+        <div id="search-bar-container">
+            <input type="text" id="search-input" placeholder="Pesquisar produtos..." />
+            <button id="search-button">Buscar</button>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#products">Produtos</a></li>
-                <li><a href="#location">Localização</a></li>
-                <li><a href="#contact">Contato</a></li>
-                <li><a href="#cart">Carrinho</a></li>
-            </ul>
-        </nav>
+
+        <div class="products-container" id="products-container">
+            <!-- Produtos serão inseridos aqui via JS -->
+        </div>
+    </section>
+
+    <section id="location">
+        <h2>Onde nos encontrar</h2>
+        <div class="map-container" style="text-align:center;">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.929054470528!2d-46.63610828497596!3d-23.547451984688354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59bc31e1ce11%3A0x1e350ae4a7f54603!2sPaulista%20Avenue!5e0!3m2!1sen!2sbr!4v1683027969080!5m2!1sen!2sbr"
+                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <p>Endereço: Rua das Motos, 123, São Paulo, SP</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contato</h2>
+        <div class="contact-content" style="max-width:800px; margin:auto;">
+            <div class="contact-text">
+                <h3>Nossa História</h3>
+                <p>A Motopeças foi fundada em 2005 com o objetivo de fornecer peças e acessórios de alta qualidade para motocicletas. Desde então, nos dedicamos a oferecer produtos confiáveis e um atendimento excepcional ao cliente.</p>
+                <h3>Missão</h3>
+                <p>Nosso objetivo é garantir que cada motociclista tenha acesso às melhores peças e acessórios, garantindo segurança e performance para suas motos.</p>
+                <h3>Visão</h3>
+                <p>Ser a loja de peças e acessórios para motocicletas mais confiável e recomendada no Brasil, reconhecida pela qualidade de nossos produtos e pela excelência em nosso atendimento.</p>
+                <h3>Valores</h3>
+                <ul>
+                    <li>Qualidade: Oferecer produtos que atendam aos mais altos padrões de qualidade.</li>
+                    <li>Comprometimento: Estar sempre comprometidos com as necessidades dos nossos clientes.</li>
+                    <li>Transparência: Manter uma comunicação aberta e honesta com nossos clientes e parceiros.</li>
+                    <li>Inovação: Buscar continuamente novas soluções e produtos para melhorar a experiência dos nossos clientes.</li>
+                </ul>
+                <a href="https://api.whatsapp.com/send?phone=554797318723&text=Olá,%20como%20posso%20ajudar?" target="_blank" class="btn-add-cart" style="text-decoration:none; display:inline-block; margin-top:1rem;">Fale Conosco no WhatsApp</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Drawer do carrinho -->
+<aside id="cart-drawer" aria-hidden="true">
+    <header>
+        <h2>Carrinho</h2>
+        <button id="cart-close-btn" aria-label="Fechar carrinho">&times;</button>
     </header>
+    <ul id="cart-items">
+        <!-- Itens do carrinho -->
+    </ul>
+    <button id="send-order">Finalizar Compra pelo WhatsApp</button>
+</aside>
 
-    <main>
-        <section id="products">
-            <h2>Nossos Produtos</h2>
-            <div class="products-container" id="products-container">
-                <!-- Produtos gerados pelo JS -->
-            </div>
-        </section>
+<!-- Ícone fixo do carrinho -->
+<button id="cart-icon-btn" aria-label="Abrir carrinho">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 18c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm10 0c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm-13.334-2l1.4-8h15.567l1.333 6H8.566l-.2 1H20v2H6.666z"/>
+    </svg>
+</button>
 
-        <section id="location">
-            <h2>Onde nos encontrar</h2>
-            <div class="map-container" style="text-align:center;">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.929054470528!2d-46.63610828497596!3d-23.547451984688354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59bc31e1ce11%3A0x1e350ae4a7f54603!2sPaulista%20Avenue!5e0!3m2!1sen!2sbr!4v1683027969080!5m2!1sen!2sbr"
-                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                <p>Endereço: Rua das Motos, 123, São Paulo, SP</p>
-            </div>
-        </section>
+<footer style="background:#333; color:#fff; text-align:center; padding:1rem;">
+    <p>&copy; 2025 Motopeças. Todos os direitos reservados. | Telefone para pedidos: <a href="tel:+5547" style="color:#fff;">+55 47 9731-8723</a></p>
+</footer>
 
-        <section id="contact">
-            <h2>Contato</h2>
-            <div class="contact-content" style="max-width:800px; margin:auto;">
-                <div class="contact-text">
-                    <h3>Nossa História</h3>
-                    <p>A Motopeças foi fundada em 2005 com o objetivo de fornecer peças e acessórios de alta qualidade para motocicletas. Desde então, nos dedicamos a oferecer produtos confiáveis e um atendimento excepcional ao cliente.</p>
-                    <h3>Missão</h3>
-                    <p>Nosso objetivo é garantir que cada motociclista tenha acesso às melhores peças e acessórios, garantindo segurança e performance para suas motos.</p>
-                    <h3>Visão</h3>
-                    <p>Ser a loja de peças e acessórios para motocicletas mais confiável e recomendada no Brasil, reconhecida pela qualidade de nossos produtos e pela excelência em nosso atendimento.</p>
-                    <h3>Valores</h3>
-                    <ul>
-                        <li>Qualidade: Oferecer produtos que atendam aos mais altos padrões de qualidade.</li>
-                        <li>Comprometimento: Estar sempre comprometidos com as necessidades dos nossos clientes.</li>
-                        <li>Transparência: Manter uma comunicação aberta e honesta com nossos clientes e parceiros.</li>
-                        <li>Inovação: Buscar continuamente novas soluções e produtos para melhorar a experiência dos nossos clientes.</li>
-                    </ul>
-                    <a href="https://api.whatsapp.com/send?phone=554797318723&text=Olá,%20como%20posso%20ajudar?" target="_blank" class="btn-add-cart" style="text-decoration:none; display:inline-block; margin-top:1rem;">Fale Conosco no WhatsApp</a>
-                </div>
-            </div>
-        </section>
+<script>
+    const products = [
+        { title: "Pneu Dianteiro", description: "Pneu de alta durabilidade para motos esportivas.", img: "img/pneu dianteiro.jpg" },
+        { title: "Kit Relação", description: "Kit completo de relação para motocicletas.", img: "img/kit relação.png" },
+        { title: "Óleo de Motor", description: "Óleo sintético de alta performance para motores de motocicletas.", img: "img/oleo de motor.png" },
+        { title: "Filtro de Ar", description: "Filtro de ar para manter o motor limpo e eficiente.", img: "img/filtro de ar.jpeg" },
+        { title: "Pastilha de Freio", description: "Pastilha de freio de alta qualidade para segurança.", img: "img/pastilha de freio.jpeg" },
+        { title: "Amortecedor", description: "Amortecedor para uma pilotagem mais confortável.", img: "img/amortecedor.jpeg" },
+        { title: "Cabo de Embreagem", description: "Cabo de embreagem durável e resistente.", img: "img/embreagem.jpeg" },
+        { title: "Lanterna Traseira", description: "Lanterna traseira para melhor visibilidade.", img: "img/lanterna.jpeg" }
+    ];
 
-        <section id="cart">
-            <h2>Carrinho</h2>
-            <ul id="cart-items"></ul>
-            <button id="send-order">Finalizar Compra pelo WhatsApp</button>
-        </section>
-    </main>
+    const productsContainer = document.getElementById('products-container');
+    const cartItemsUl = document.getElementById('cart-items');
+    const sendOrderBtn = document.getElementById('send-order');
+    const cartDrawer = document.getElementById('cart-drawer');
+    const cartIconBtn = document.getElementById('cart-icon-btn');
+    const cartCloseBtn = document.getElementById('cart-close-btn');
+    const searchInput = document.getElementById('search-input');
+    const searchButton = document.getElementById('search-button');
 
-    <footer style="background:#333; color:#fff; text-align:center; padding:1rem;">
-        <p>&copy; 2025 Motopeças. Todos os direitos reservados. | Telefone para pedidos: <a href="tel:+5547" style="color:#fff;">+55 47 9731-8723</a></p>
-    </footer>
+    let cart = [];
 
-    <script>
-        // Lista de produtos
-        const products = [
-            { title: "Pneu Dianteiro", description: "Pneu de alta durabilidade para motos esportivas.", img: "img/pneu dianteiro.jpg" },
-            { title: "Kit Relação", description: "Kit completo de relação para motocicletas.", img: "img/kit relação.png" },
-            { title: "Óleo de Motor", description: "Óleo sintético de alta performance para motores de motocicletas.", img: "img/oleo de motor.png" },
-            { title: "Filtro de Ar", description: "Filtro de ar para manter o motor limpo e eficiente.", img: "img/filtro de ar.jpeg" },
-            { title: "Pastilha de Freio", description: "Pastilha de freio de alta qualidade para segurança.", img: "img/pastilha de freio.jpeg" },
-            { title: "Amortecedor", description: "Amortecedor para uma pilotagem mais confortável.", img: "img/amortecedor.jpeg" },
-            { title: "Cabo de Embreagem", description: "Cabo de embreagem durável e resistente.", img: "img/embreagem.jpeg" },
-            { title: "Lanterna Traseira", description: "Lanterna traseira para melhor visibilidade.", img: "img/lanterna.jpeg" }
-        ];
-
-        const productsContainer = document.getElementById('products-container');
-        const cartItemsUl = document.getElementById('cart-items');
-        const sendOrderBtn = document.getElementById('send-order');
-
-        let cart = [];
-
-        function createProductCard(product) {
+    function renderProducts(filter = '') {
+        productsContainer.innerHTML = '';
+        const filtered = products.filter(p => p.title.toLowerCase().includes(filter.toLowerCase()));
+        if (filtered.length === 0) {
+            productsContainer.innerHTML = '<p style="text-align:center; width:100%;">Nenhum produto encontrado.</p>';
+            return;
+        }
+        filtered.forEach(product => {
             const div = document.createElement('div');
             div.className = 'product';
             div.innerHTML = `
@@ -269,66 +132,96 @@
                 <p>${product.description}</p>
                 <button class="btn-add-cart" onclick="addToCart('${product.title}')">Adicionar ao Carrinho</button>
             `;
-            return div;
-        }
-
-        function renderProducts() {
-            products.forEach(prod => {
-                productsContainer.appendChild(createProductCard(prod));
-            });
-        }
-
-        function addToCart(productTitle) {
-            // Verifica se o produto já está no carrinho
-            const found = cart.find(item => item.title === productTitle);
-            if (found) {
-                found.qty++;
-            } else {
-                cart.push({ title: productTitle, qty: 1 });
-            }
-            renderCart();
-        }
-
-        function removeFromCart(productTitle) {
-            cart = cart.filter(item => item.title !== productTitle);
-            renderCart();
-        }
-
-        function renderCart() {
-            cartItemsUl.innerHTML = '';
-            if (cart.length === 0) {
-                cartItemsUl.innerHTML = '<li>O carrinho está vazio.</li>';
-                return;
-            }
-            cart.forEach(item => {
-                const li = document.createElement('li');
-                li.innerHTML = `
-                    ${item.title} (x${item.qty}) 
-                    <button onclick="removeFromCart('${item.title}')">X</button>
-                `;
-                cartItemsUl.appendChild(li);
-            });
-        }
-
-        sendOrderBtn.addEventListener('click', () => {
-            if (cart.length === 0) {
-                alert('Seu carrinho está vazio.');
-                return;
-            }
-            // Monta a mensagem para WhatsApp
-            let message = "Olá, gostaria de fazer o pedido dos seguintes itens:%0A";
-            cart.forEach(item => {
-                message += `- ${item.title} (quantidade: ${item.qty})%0A`;
-            });
-            message += "%0AObrigado!";
-            const phone = "554797318723"; // número com código do país e DDD, sem + ou espaços
-            const url = `https://api.whatsapp.com/send?phone=${phone}&text=${message}`;
-            window.open(url, '_blank');
+            productsContainer.appendChild(div);
         });
+    }
 
-        // Inicializa
-        renderProducts();
+    function addToCart(productTitle) {
+        const found = cart.find(item => item.title === productTitle);
+        if (found) {
+            found.qty++;
+        } else {
+            cart.push({ title: productTitle, qty: 1 });
+        }
         renderCart();
-    </script>
+        openCartDrawer();
+    }
+
+    function removeFromCart(productTitle) {
+        cart = cart.filter(item => item.title !== productTitle);
+        renderCart();
+    }
+
+    function renderCart() {
+        cartItemsUl.innerHTML = '';
+        if (cart.length === 0) {
+            cartItemsUl.innerHTML = '<li>O carrinho está vazio.</li>';
+            return;
+        }
+        cart.forEach(item => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                ${item.title} (x${item.qty}) 
+                <button onclick="removeFromCart('${item.title}')">&times;</button>
+            `;
+            cartItemsUl.appendChild(li);
+        });
+    }
+
+    function openCartDrawer() {
+        cartDrawer.classList.add('open');
+        cartDrawer.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeCartDrawer() {
+        cartDrawer.classList.remove('open');
+        cartDrawer.setAttribute('aria-hidden', 'true');
+    }
+
+    sendOrderBtn.addEventListener('click', () => {
+        if (cart.length === 0) {
+            alert('Seu carrinho está vazio.');
+            return;
+        }
+        let message = "Olá, gostaria de fazer o pedido dos seguintes itens:%0A";
+        cart.forEach(item => {
+            message += `- ${item.title} (quantidade: ${item.qty})%0A`;
+        });
+        message += "%0AObrigado!";
+        const phone = "554797318723"; // número da loja com DDD e código país
+        const url = `https://api.whatsapp.com/send?phone=${phone}&text=${message}`;
+        window.open(url, '_blank');
+    });
+
+    cartIconBtn.addEventListener('click', () => {
+        if (cartDrawer.classList.contains('open')) {
+            closeCartDrawer();
+        } else {
+            openCartDrawer();
+        }
+    });
+
+    cartCloseBtn.addEventListener('click', closeCartDrawer);
+
+    // Pesquisa em tempo real
+    function filterProducts() {
+        const query = searchInput.value.trim();
+        renderProducts(query);
+    }
+    searchInput.addEventListener('input', filterProducts);
+
+    // Botão buscar faz mesma coisa que input
+    searchButton.addEventListener('click', () => {
+        filterProducts();
+    });
+
+    // Inicializa produtos e carrinho
+    renderProducts();
+    renderCart();
+
+    // Tornar funções globais para os botões inline funcionarem
+    window.addToCart = addToCart;
+    window.removeFromCart = removeFromCart;
+</script>
 </body>
 </html>
