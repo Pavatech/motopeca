@@ -25,7 +25,8 @@
         <section id="products">
             <h2>Nossos Produtos</h2>
             <div class="search-bar">
-    <input type="text" id="searchInput" placeholder="Buscar produtos..." onkeyup="filterProducts()">
+    <input type="text" id="searchInput" placeholder="Buscar produtos...">
+    <button onclick="filterProducts()">Buscar</button>
 </div>
             <div class="products-container">
                 <div class="product">
@@ -148,6 +149,27 @@
             const text = encodeURIComponent(button.getAttribute('data-message'));
             button.href = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${text}`;
         });
+
+        
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("input", filterProducts);
+
+function filterProducts() {
+    const input = searchInput.value.toLowerCase();
+    const products = document.querySelectorAll(".products-container .product");
+
+    products.forEach(product => {
+        const title = product.querySelector("h3").innerText.toLowerCase();
+        const description = product.querySelector("p").innerText.toLowerCase();
+
+        if (title.includes(input) || description.includes(input)) {
+            product.style.display = "block";
+        } else {
+            product.style.display = "none";
+        }
+    });
+}
     </script>
 </body>
 </html>
