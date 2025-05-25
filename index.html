@@ -187,7 +187,7 @@
             message += `- ${item.title} (quantidade: ${item.qty})%0A`;
         });
         message += "%0AObrigado!";
-        const phone = "554797318723"; // número da loja com DDD e código país
+        const phone = ""; // número da loja com DDD e código país
         const url = `https://api.whatsapp.com/send?phone=${phone}&text=${message}`;
         window.open(url, '_blank');
     });
