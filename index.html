@@ -86,7 +86,7 @@
 </button>
 
 <footer>
-    <p>&copy; 2025 Motopeças. Todos os direitos reservados. | Telefone para pedidos: <a href="tel:+5547">+55 47 9731-8723</a></p>
+    <p>&copy; 2025 Motopeças. Todos os direitos reservados. | Telefone para pedidos: <a href="tel:+5547">+55 </a></p>
 </footer>
 
 <script>
@@ -198,7 +198,7 @@
             return sum + (product.price * item.qty);
         }, 0);
         message += `%0ATotal: R$ ${total.toFixed(2)}%0AObrigado!`;
-        const phone = "554797318723"; // número da loja com DDD e código país
+        const phone = "554"; // número da loja com DDD e código país
         const url = `https://api.whatsapp.com/send?phone=${phone}&text=${message}`;
         window.open(url, '_blank');
     });
